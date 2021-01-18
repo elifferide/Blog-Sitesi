@@ -1,0 +1,39 @@
+<div class="alert alert-warning mt-3" role="alert">
+  Yorum ve destekleriniz bizim için çok önemli!
+</div>
+<div class="yorumlar">
+  <h5>Yorumlar</h5>
+
+  <% for(var i=0; i<yorumlar.length; i++) { %>
+
+  <div class="yorum
+  <% if(i%2!=0) { %>
+    bg-light
+  <% } %>
+   ">
+    <div class="isim">
+      <%= yorumlar[i].isim %>
+    </div>
+    <div class="icerik">
+      <%= yorumlar[i].yorum %>
+    </div>
+  </div>
+<% } %>
+
+  <form action="/yorum-gonder" method="post" class="p-3b bg-light mt-3 mb-3">
+    <div class="form-group">
+      <label for="isim">İsim giriniz...</label>
+      <input type="text" class="form-control" name="isim" id="isim" aria-describedby="isimHelp" placeholder="İsim Giriniz..">
+      <small id="isimHelp" class="form-text text-muted">İsminiz yorumunuzla beraber görünecektir.</small>
+    </div>
+    <div class="form-group">
+      <label for="yorum">Yorumunuz</label>
+      <textarea name="yorum"  rows="6" cols="80" class="form-control" id="yorum" placeholder="Yorumunuzu Giriniz..."></textarea>
+    </div>
+    <input type="text" name="id" value="<%= id %>" class="d-none">
+    <div class="form-group d-flex justify-content-end">
+      <button type="submit" class="btn btn-primary">Gönder</button>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,33 @@
+<div class="bg-light">
+  <div class="container ">
+    <nav class="navbar navbar-expand-lg navbar-light pl-0 pr-0">
+    <div class="container-fluid pl-0 pr-0">
+      <a class="font-weight-bold navbar-brand logo" href="/">My blog</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Anasayfa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin-paneli">Admin Paneli</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Kategoriler
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <%  for(var i=0; i<kategoriler.length; i++){ %>
+            <a class="dropdown-item" href="/kategori/<%=kategoriler[i].link %>"><%=kategoriler[i].isim%></a>
+            <% } %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  </div>
+</div>

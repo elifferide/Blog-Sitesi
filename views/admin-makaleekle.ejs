@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Makale Ekle</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/admin.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">My Blog</a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="/cikis">Çıkış Yap</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="/admin-makaleler">
+                  <span data-feather="home"></span>
+                  Makaleler<span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin-makaleekle">
+                  <span data-feather="file"></span>
+                  Makale Ekle
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin-yorumlar">
+                  <span data-feather="file"></span>
+                  Yorumlar
+                </a>
+              </li>
+            </ul>
+
+
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <h4 class="pl-3">Makale Ekle</h4>
+            <div class="p-3 ">
+          <form action="/veritabanina-ekle" method="post" enctype="multipart/form-data">
+                <div class="row mb-2">
+                  <div class="col">
+                    <input required class="form-control" type="text" name="baslik" placeholder="Başlık">
+
+                  </div>
+                </div>
+
+                <div class="row mb-2">
+                  <div class="col">
+                    <input required class="form-control" type="text" name="kategori" placeholder="Kategori">
+                  </div>
+                </div>
+
+                <textarea required class="form-control mb-2" name="makale" rows="3"></textarea>
+                <div class="col form-control mb-2 d-flex align-items-center">
+                    <span>Resim Seçiniz : </span>
+                    <input required class="pl-3" name="dosya" id="dosya" type="file">
+                </div>
+                <input class="w-100 btn btn-danger" type="submit" value="Ekle" >
+
+
+
+              </form>
+
+
+            </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
+  </body>
+</html>

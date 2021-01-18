@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Makaleler</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/admin.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">My Blog</a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="/cikis">Çıkış Yap</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="/admin-makaleler">
+                  <span data-feather="home"></span>
+                  Makaleler<span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin-makaleekle">
+                  <span data-feather="file"></span>
+                  Makale Ekle
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin-yorumlar">
+                  <span data-feather="file"></span>
+                  Yorumlar
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="container " style="padding-left:20%; padding-right:20%;">
+
+          <% for (var i=0; i<makaleler.length; i++) {  %>
+            <form class="" action="/yazisil" method="get">
+            <div class="row shadow-sm p-2 mb-2">
+
+                <div class="col-7 d-flex align-items-center ">
+                  <h5><%= makaleler[i].baslik%></h5>
+                </div>
+                <div class="col-5 d-flex align-items-center justify-content-end">
+                  <input class="d-none" name="id"  value="<%= makaleler[i].id%>" />
+                  <a href="/yazi/<%= makaleler[i].id%>"  class="btn btn-info mr-2">Makaleye Git</a>
+                  <button type="submit" class="btn btn-danger">Makaleyi Sil</button>
+                </div>
+              </form>
+
+            </div>
+
+          <% } %>
+          </div>
+
+        </main>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
+
+
+
+  </body>
+</html>

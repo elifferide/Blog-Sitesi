@@ -1,0 +1,29 @@
+.baslik{
+  font-size:1.5rem;
+  border-bottom: 1px dashed #dfdfdf;
+  padding-bottom: 10px;
+}
+
+.devam-et{
+  position:absolute;
+  right:10px;
+  bottom:20px;
+}
+.cok-okunanlar{
+  font-size:1.3rem;
+  padding:10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+}
+.logo{
+  font-size:1.5rem;
+}
+.yorum{
+  border:1px dashed #dfdfdf;
+  padding:1rem;
+  margin-top:10px;
+}
+.isim{
+  font-weight: bold;
+}
